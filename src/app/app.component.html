@@ -1,0 +1,32 @@
+TELA DE LOGIN!
+
+
+<!-- Usando dentro do form-->
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+      <input formControlName="userName"
+          class="form-control userName"
+          placeholder="usuário qualquer"
+          autofocus
+          #userNameInput>
+
+      <input formControlName="password"
+          type="password"
+          class="form-control mt-2"
+          placeholder="senha qualquer">
+      <ng-hcaptcha (verify)="onVerify($event)" formControlName="captcha"></ng-hcaptcha>
+
+</form>
+
+<!--  Invisible captcha
+<button ngHcaptchaInvisibleButton
+        (verify)="onVerify($event)"
+        (expired)="onExpired($event)"
+        (error)="onError($event)">Click me</button>
+ -->
+<!-- Uso fora do FORM
+<ng-hcaptcha (verify)="onVerify($event)"
+              (expired)="onExpired($event)"
+              (error)="onError($event)">
+</ng-hcaptcha> -->
+
